@@ -29,7 +29,7 @@ Firstly I obtained the datasets of the latest 12 months (Jun 24 - May 25) from [
 
 Note: As Cyclistic is a fictional company, this data comes from a public dataset made available by Motivate International Inc. under [this license](https://divvybikes.com/data-license-agreement).
 
-Due to data-privacy issues, we will not have access to riders' personally identifiable information, meaning we wil not be able to determine if the same individual has purchased multiple single passes, nor will we be able to identify whether the users live in the general servicable area of our Cyclistic bikes.
+Due to data-privacy issues, we will not have access to riders' personally identifiable information, meaning we will not be able to determine if the same individual has purchased multiple single passes, nor will we be able to identify whether the users live in the general servicable area of our Cyclistic bikes.
 
 The data provided is ROCCC:
 
@@ -102,7 +102,7 @@ format_timestamp('%A',started_at) as dayOfWeek
 from cyclistic-dataset-work.cyclistic_data.overall_table
 
 ```
-Next, I checked for duplicate any duplicates in ride_id, which was supposed to be unique for each ride. I found that all entries in the ride_id column was indeed unique.
+Next, I checked for any duplicates in ride_id, which was supposed to be unique for each ride. I found that all entries in the ride_id column was indeed unique.
 ```sql
 SELECT ride_id,
 count(*)
@@ -128,7 +128,7 @@ Although there was a substantial number of rows which was missing station data (
 ### Analyse
 To analyse our data, I used both SQL and Tableau.
 
-First I checked for the total number of rides of botht casual riders and members, as well as their average ride times (in minutes).
+First I checked for the total number of rides of both casual riders and members, as well as their average ride times (in minutes).
 
 ```sql
 SELECT 
@@ -162,7 +162,7 @@ Next, we plotted the number of rides for each month, split into casual riders an
 
 We observe two things:
 1) Members consistently take more rides than casual riders, which is expected since we already know that number of rides by members is higher from our previous query
-2) The overall trend of rides is the same for both casual riders and members, suggesting a factor that effects all riders equally. One such factor might be the changing seasons. Rides peak around July to September where it is warm, and bottom out in December to February, which is during winter.
+2) The overall trend of rides is the same for both casual riders and members, suggesting a factor that affects all riders equally. One such factor might be the changing seasons. Rides peak around July to September where it is warm, and bottom out in December to February, which is during winter.
 
 ---
 
@@ -175,7 +175,7 @@ Median Trip Length by Day of Week
 <img width="1463" height="724" alt="image" src="https://github.com/user-attachments/assets/b44f72a5-8ab5-4da7-bf09-3146ccbac5d6" />
 
 From the 2 graphs above, we can see that there are more rides by members during weekdays while rides by casual riders peak in the weekends. 
-Additionally, ride length for casual riders peak during weekends while that of members remains stable throughout the week. To mitigate the problem
+Additionally, ride length for casual riders peak during weekends while that of members remains stable throughout the week. 
 
 
 ### Share
@@ -184,7 +184,7 @@ After analysing our data, I have compiled it into a tableau dashboard to explain
 <img width="1434" height="803" alt="image" src="https://github.com/user-attachments/assets/a2718ea3-f565-44cf-9407-9cb933dacca9" />
 
 To summarise our findings, the number of rides taken by both members and casual riders are heavily influenced by the changing season, with warmer months seeing more rides taken. 
-Overall, most rides are under 30 minutes, with a relatively small number of riders with hours of ride time per trip.
+Overall, most rides are under 10 minutes, with a relatively small number of riders with hours of ride time per trip.
 Our target group, casual riders, tend to take more rides during weekends. These rides also tend to be longer than those taken during the weekdays.
 
 ### Act
